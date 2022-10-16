@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: url("/src/assets/home-bg.png") no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.nav-items li {
+    background-image: url("/src/assets/wave-line.svg");
+    @apply block bg-no-repeat bg-bottom;
+    background-size: 100%;
+    padding-bottom:5px;
+    content: "";
+}
+
+.nav-items {
+    @apply flex items-center justify-start gap-x-4;
+}
