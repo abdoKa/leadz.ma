@@ -2,20 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: LoveYaLikeASister;
+  src: url("../src/assets/fonts/LoveYaLikeASister.ttf");
+}
+
+@font-face {
+  font-family: Unkempt-Bold;
+  src: url("../src/assets/fonts/Unkempt-Bold.ttf");
+}
+
+@font-face {
+  font-family: Unkempt-Regular;
+  src: url("../src/assets/fonts/Unkempt-Regular.ttf");
+}
+
 body {
-    background: url("/src/assets/home-bg.png") no-repeat;
-    background-size: cover;
-    background-position: top center;
+  background: url("/src/assets/home-bg.png") no-repeat;
+  background-size: cover;
+  background-position: top center;
 }
 
 .nav-items li {
-    background-image: url("/src/assets/wave-line.svg");
-    @apply block bg-no-repeat bg-bottom;
-    background-size: 100%;
-    padding-bottom:5px;
-    content: "";
+  background-image: url("/src/assets/wave-line.svg");
+  @apply block bg-no-repeat bg-bottom;
+  background-size: 100%;
+  padding-bottom: 5px;
+  content: "";
 }
 
 .nav-items {
-    @apply flex items-center justify-start gap-x-4;
+  @apply flex items-center justify-start gap-x-4;
+  font-family: Unkempt-Regular;
+}
+.hero-section {
+  @apply relative flex-center-center-col my-20 mx-auto px-4 w-full md:w-[40%];
+}
+
+.hero-section :is(p, h1, h2, h3, h4, h5, h6) {
+  font-family: LoveYaLikeASister;
+}
+
+.hero-inner {
+  @apply font-normal text-2xl text-center;
+}
+
+.hero-inner :is(h1) {
+  @apply leading-relaxed;
+}
+
+@layer components {
+  .flex-center-center,
+  .flex-center-center-col {
+    @apply flex items-center justify-center;
+  }
+  .flex-center-center-col {
+    @apply flex-col;
+  }
+  .absolute-tl-center,
+  .absolute-rb-center {
+    @apply absolute  top-1/2 -translate-y-1/2;
+  }
+
+  .absolute-tl-center {
+    @apply left-0;
+  }
+  
+  .absolute-rb-center {
+    @apply right-0;
+  }
 }
